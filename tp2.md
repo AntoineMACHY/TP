@@ -6,8 +6,16 @@ Le but de ce TP est de faire notre propre service, c'est pourquoi il ce compose 
 
 Avant tous on change le nom de la machine avec la commande ```sudo hostname node1.tp2.linux```
 
-<img src="Images/node.png" alt="jndjqs"/>
+<img src="Images/node.png" alt="photo"/>
 
-Partie 1 :
+On change le nom de la machine quand elle s'allume ```cd /etc``` et ```sudo nano hostname``` puis on écrit node1.tp2.linux
+
+Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM
+
+```ping 1.1.1.1```
+
+<img src="Images/ping 1.1.1.1.png"alt="photo"/>
+
+Partie 1 : Installation et configuration d'un service SSH
 
 ---
