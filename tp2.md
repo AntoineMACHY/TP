@@ -24,7 +24,7 @@ Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM 
 
 <img src="Images/pingVM.png" alt="photo"/>
 
-## Partie 1 : Installation et configuration d'un service SSH>
+## Partie 1 : Installation et configuration d'un service SSH
 
 1. On installe le paquet avec la commande```sudo apt install openssh-server```
 
@@ -105,3 +105,11 @@ On peut désormé redémarrer le service a l'aide de la commande ```sudo systemc
 Pour ce connecter au serveur ftp on va dans le gestionnaire de fichier ---> On rentre ```ftp://192.168.56.140:1060/```
 
 On peut donc réutiliser la même méthode que dit précedement pour upload et download un fichier.
+
+## Parti 3 : Création de votre propre service
+
+1. On installe le paquet avec la commande```sudo apt-get install netcat```
+
+2. Les deux commande pour faire un chat avec "netcat" sont : ```nc -l -p 2000``` et ```nc 192.168.56.142 2000```
+
+<img src="Images/nc.png" alt="photo"/>
