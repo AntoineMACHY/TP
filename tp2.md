@@ -92,6 +92,10 @@ Pour mettre en évidence les lignes de log du download et de l'upload il faut ce
 
 <img src="Images/copiecolle.png" alt="photo"/>
 
-4. On va modifier le comportement du service. Il faut donc faire ```cd /etc``` puis ```sudo nano vsftp.conf``` pour rentrer dans le fichier. Ainsi on peut changer le port d'écoute de vsftpd qui est de base 22 en 1060 en ajoutant ```listen_port=1060```.
+4. On va modifier le comportement du service. Il faut donc faire ```cd /etc``` puis ```sudo nano vsftp.conf``` pour rentrer dans le fichier. Ainsi on peut changer le port d'écoute de vsftpd qui est de base 22 en 1060 en ajoutant ```listen_port=1060```. Puis pour vérifier qu'il soit bien sauvegardé on fait ```sudo cat vsftpd.conf```
 
 <img src="Images/listen_port-1060.png" alt="photo"/>
+
+Ainsi on voit si c'est modifications ont prit effet grâce a la commande ```sudo ss -lanpt```
+
+<img src="Images/portvsftpd1060.png" alt="photo"/>
