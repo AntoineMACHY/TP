@@ -24,7 +24,7 @@ Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM 
 
 <img src="Images/pingVM.png" alt="photo"/>
 
-<Partie 1 : Installation et configuration d'un service SSH>
+## Partie 1 : Installation et configuration d'un service SSH>
 
 1. On installe le paquet avec la commande```sudo apt install openssh-server```
 
@@ -60,3 +60,4 @@ On peut désormé redémarrer le serveur avec la commande ```sudo systemctl rest
 
 Maitenant qu'on veut se connecter au nouveau port on doit faire : ```ssh -p 1060 192.168.56.168```
 
+## Partie 2 : FTP
