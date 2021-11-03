@@ -14,7 +14,7 @@ Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM
 
 ```ping 1.1.1.1```
 
-<img src="Images/ping 1.1.1.1.png"alt="photo"/>
+<img src="Images/ping 1.1.1.1.png" alt="photo"/>
 
 Partie 1 : Installation et configuration d'un service SSH
 
