@@ -61,3 +61,23 @@ On peut désormé redémarrer le serveur avec la commande ```sudo systemctl rest
 Maitenant qu'on veut se connecter au nouveau port on doit faire : ```ssh -p 1060 192.168.56.168```
 
 ## Partie 2 : FTP
+
+1. On installe le paquet avec la commande```sudo apt install vsftpd```
+
+2. On lance le serveur avec la commande ```sudo systemctl start vsftpd``` 
+
+3. On vérifie qu'il soit bien actif avec la commande ```sudo systemctl status vsftpd```
+
+<img src="Images/staue de vsftpd.png" alt="photo"/>
+
+On affiche le processus liés au service ssh avec la commande ```ps -e```
+
+<img src="Images/ps -e de vsftpd.png" alt="photo"/>
+
+On affiche le port utilisé par le service ssh avec ```sudo ss -lanpt```
+
+<img src="Images/port 21.png" alt="photo"/>
+
+On affiche les logs du service ssh avec la commande ```sudo journalctl -u vsftpd```
+
+Pour ce connecter au serveur ss depuis notre PC, il faut taper la commande ```ssh toto@192.168.56.140```
