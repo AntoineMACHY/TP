@@ -56,7 +56,7 @@ On vérifie ensuite que la modification ai était bien prise en compte avec la c
 
 <img src="Images/sudo ss -l -anpt2.png" alt="photo"/>
 
-On peut désormé redémarrer le serveur avec la commande ```sudo systemctl restart sshd```
+On peut désormé redémarrer le service avec la commande ```sudo systemctl restart sshd```
 
 Maitenant qu'on veut se connecter au nouveau port on doit faire : ```ssh -p 1060 192.168.56.168```
 
@@ -99,3 +99,9 @@ Pour mettre en évidence les lignes de log du download et de l'upload il faut ce
 Ainsi on voit si c'est modifications ont prit effet grâce a la commande ```sudo ss -lanpt```
 
 <img src="Images/portvsftpd1060.png" alt="photo"/>
+
+On peut désormé redémarrer le service a l'aide de la commande ```sudo systemctl restart vsftpd```
+
+Pour ce connecter au serveur ftp on va dans le gestionnaire de fichier ---> On rentre ```ftp://192.168.56.140:1060/```
+
+On peut donc réutiliser la même méthode que dit précedement pour upload et download un fichier.
