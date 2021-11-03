@@ -19,6 +19,12 @@ Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM
 ```ping ynov.com```
 
 <img src="Images/ping ynov.com.png" alt="photo"/>
+
+```ping 192.168.56.140```
+
+<img src="Images/pingVM.png" alt="photo"/>
+
 Partie 1 : Installation et configuration d'un service SSH
+
 
 ---
