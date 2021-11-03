@@ -10,21 +10,26 @@ Avant tous on change le nom de la machine avec la commande ```sudo hostname node
 
 On change le nom de la machine quand elle s'allume ```cd /etc``` et ```sudo nano hostname``` puis on écrit node1.tp2.linux
 
-Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM
+Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM :
 
-```ping 1.1.1.1```
+```ping 1.1.1.1``` sur VM
 
 <img src="Images/ping 1.1.1.1.png" alt="photo"/>
 
-```ping ynov.com```
+```ping ynov.com``` sur VM
 
 <img src="Images/ping ynov.com.png" alt="photo"/>
 
-```ping 192.168.56.140```
+```ping 192.168.56.140``` Sur notre PC
 
 <img src="Images/pingVM.png" alt="photo"/>
 
 Partie 1 : Installation et configuration d'un service SSH
 
+1. On installe le paquet avec la commande```sudo apt install openssh-server```
 
----
+2. On lance le serveur avec la commande ```sudo systemctl start sshd``` 
+
+3. On vérifie qu'il soit bien actif avec la commande ```sudo systemctl status sshd```
+
+<img src="Images/sudo stystemctl status sshd.png" alt="photo"/>
