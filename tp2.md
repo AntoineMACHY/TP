@@ -32,4 +32,4 @@ Partie 1 : Installation et configuration d'un service SSH
 
 3. On vérifie qu'il soit bien actif avec la commande ```sudo systemctl status sshd```
 
-<img src="Images/sudo stystemctl status sshd.png" alt="photo"/>
+<img src="Images/sudo systemctl status sshd.png" alt="photo"/>
