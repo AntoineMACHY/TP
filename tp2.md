@@ -50,3 +50,5 @@ Pour ce connecter au serveur ss depuis notre PC, il faut taper la commande ```ss
 
 <img src="Images/cat du port.png" alt="photo"/>
 
+<img src="Images/sudo ss -l -anpt2.png" alt="photo"/>
+
