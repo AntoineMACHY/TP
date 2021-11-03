@@ -56,3 +56,7 @@ On vérifie ensuite que la modification ai était bien prise en compte avec la c
 
 <img src="Images/sudo ss -l -anpt2.png" alt="photo"/>
 
+On peut désormé redémarrer le serveur avec la commande ```sudo systemctl restart sshd```
+
+Maitenant qu'on veut se connecter au nouveau port on doit faire : ```ssh -p 1060 192.168.56.168```
+
