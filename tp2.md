@@ -114,7 +114,7 @@ On peut donc réutiliser la même méthode que dit précedement pour upload et d
 
 <img src="Images/nc.png" alt="photo"/>
 
-Suite a cela on essaie de stocker notre discussion dans un fichier txt appellé "test.txt". A l'aide de la ```touch test.txt``` on crée le fichier. Puis en le pour le faire stocker les données échangées on fait ```nc -l -p 2000 >> test.txt``` et ```nc 192.168.56.142 2000 >> test.txt```. Pour vérifier cela suite a un échange on va afficher les données stocker par le fichier texte ```cat test.txt```.
+Suite a cela on essaie de stocker notre discussion dans un fichier txt appellé "test.txt". A l'aide de la ```touch test.txt``` on crée le fichier. Puis en le pour le faire stocker les données échangées on fait ```nc -l -p 2000 >> test.txt``` et ```nc 192.168.56.142 2000 >> test.txt```. Pour vérifier cela suite a un échange on va afficher les données stockées par le fichier texte ```cat test.txt```.
 
 <img src="Images/test.png" alt="photo"/>
 
