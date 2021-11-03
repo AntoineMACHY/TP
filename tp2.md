@@ -41,3 +41,12 @@ On affiche le processus liés au service ssh avec la commande ```ps -e```
 On affiche le port utilisé par le service ssh avec ```sudo ss -lanpt```
 
 <img src="Images/sudo ss -l -anpt.png" alt="photo"/>
+
+On affiche les logs du service ssh avec la commande ```sudo journalctl -u ssh```
+
+Pour ce connecter au serveur ss depuis notre PC, il faut taper la commande ```ssh toto@192.168.56.140```
+
+4. On va modifier le fichier sshd_config pour cela on va faire ```cd /etc/ssh``` puis ```sudo nano sshd_config```. Ensuite on modifie son port d'écoute qui est de base de 22 en 1060.
+
+<img src="Images/cat du port.png" alt="photo"/>
+
