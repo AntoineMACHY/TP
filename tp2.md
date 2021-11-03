@@ -6,7 +6,7 @@ Le but de ce TP est de faire notre propre service, c'est pourquoi il ce compose 
 
 Avant tous on change le nom de la machine avec la commande ```sudo hostname node1.tp2.linux```
 
-<img src="images/node.png" alt="jndjqs"/>
+<img src="Images/node.png" alt="jndjqs"/>
 
 Partie 1 :
 
