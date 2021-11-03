@@ -48,7 +48,11 @@ Pour ce connecter au serveur ss depuis notre PC, il faut taper la commande ```ss
 
 4. On va modifier le fichier sshd_config pour cela on va faire ```cd /etc/ssh``` puis ```sudo nano sshd_config```. Ensuite on modifie son port d'écoute qui est de base de 22 en 1060.
 
+On vérifie que la modification a bien était sauvegarder avec la commande ```sudo cat sshd_config``` 
+
 <img src="Images/cat du port.png" alt="photo"/>
+
+On vérifie ensuite que la modification ai était bien prise en compte avec la commande ```sudo ss -lanpt```
 
 <img src="Images/sudo ss -l -anpt2.png" alt="photo"/>
 
