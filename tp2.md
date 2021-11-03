@@ -90,7 +90,7 @@ Pour verifier que cela a marché on fait ```ls``` dans le dossier ou on a copier
 
 Pour mettre en évidence les lignes de log du download et de l'upload il faut ce rendre dans le dossier log avec ```cd /var/log``` puis afficher le fichier "vsftpd.log" ```sudo cat vsftpd.log```.
 
-<img src="Images/download" alt="photo"/>
+<img src="Images/download.png" alt="photo"/>
 
-<img src="Images/upload" alt="photo"/>
+<img src="Images/upload.png" alt="photo"/>
 
