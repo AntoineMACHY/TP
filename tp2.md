@@ -44,7 +44,7 @@ On affiche le port utilisé par le service ssh avec ```sudo ss -lanpt```
 
 On affiche les logs du service ssh avec la commande ```sudo journalctl -u ssh```
 
-Pour ce connecter au serveur ss depuis notre PC, il faut taper la commande ```ssh toto@192.168.56.140```
+Pour ce connecter au serveur ssh depuis notre PC, il faut taper la commande ```ssh toto@192.168.56.140```
 
 4. On va modifier le fichier sshd_config pour cela on va faire ```cd /etc/ssh``` puis ```sudo nano sshd_config```. Ensuite on modifie son port d'écoute qui est de base de 22 en 1060.
 
@@ -80,4 +80,11 @@ On affiche le port utilisé par le service ssh avec ```sudo ss -lanpt```
 
 On affiche les logs du service ssh avec la commande ```sudo journalctl -u vsftpd```
 
-Pour ce connecter au serveur ss depuis notre PC, il faut taper la commande ```ssh toto@192.168.56.140```
+Pour ce connecter au serveur ftp on va dans le gestionnaire de fichier ---> On rentre ```ftp://192.168.56.140```
+
+Pour uploader et telecharger un fichier de notre PC a la VM, on fait simplement un copier coller d'un fichier de notre PC au gestionnaire de fichier connecté à la VM et inversement.
+
+Pour verifier que cela a marché on fait ```ls``` dans le dossier ou on a copier le fichier.
+
+<img src="Images/ls -a de la photo.png" alt="photo"/>
+
