@@ -20,7 +20,7 @@ Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM 
 
 <img src="Images/ping ynov.com.png" alt="photo"/>
 
-```ping 192.168.56.140``` Sur notre PC
+```ping 192.168.56.140``` sur notre PC
 
 <img src="Images/pingVM.png" alt="photo"/>
 
@@ -33,3 +33,7 @@ Partie 1 : Installation et configuration d'un service SSH
 3. On vérifie qu'il soit bien actif avec la commande ```sudo systemctl status sshd```
 
 <img src="Images/sudo systemctl status sshd.png" alt="photo"/>
+
+On affiche le processus liés au service ssh avec la commande ```ps -e```
+
+<img src="Images/ps -e.png" alt="photo"/>
