@@ -37,3 +37,7 @@ Partie 1 : Installation et configuration d'un service SSH
 On affiche le processus liés au service ssh avec la commande ```ps -e```
 
 <img src="Images/ps -e.png" alt="photo"/>
+
+On affiche le port utilisé par le service ssh avec ```sudo ss -lanpt```
+
+<img src="Images/sudo ss -l -anpt.png" alt="photo"/>
