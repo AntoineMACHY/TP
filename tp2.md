@@ -128,6 +128,16 @@ Puis on y dépose le contenue suivant :
 
 <img src="Images/danservice.png" alt="photo"/>
 
+Ainsi on peut executer la commande ```sudo systemctl daemon-reload```
 
+3. A présent nous devons tester les service que nous avous créée. 
 
+On le démarre avec la commande ```sudo systemctl start chat_tp2``` puis vérifie qu'il soit correctement lancé avec la commande ````sudo systemctl status chat_tp2```.
 
+<img src="Images/statuschat.png" alt="photo"/>
+
+On vérifie le port via la commande ```sudo ss -lanpt```
+
+<img src="Images/sschat.png" alt="photo"/>
+
+Ainsi on se connecte avec la commande ```nc 192.168.56.142 2000```depuis un terminal qu'on nomme "terminal B". Puis pour voir les données envoyer en temps réel par le "terminal B", on va voir nos log grace à la commande ```journalctl -xe -u chat_tp2 -f```
