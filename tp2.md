@@ -132,7 +132,7 @@ Ainsi on peut exécuter la commande ```sudo systemctl daemon-reload```
 
 3. A présent nous devons tester le service que nous avons créé. 
 
-On démarre le service avec la commande ```sudo systemctl start chat_tp2``` puis on vérifie qu'il soit correctement lancé avec la commande ````sudo systemctl status chat_tp2```.
+On démarre le service avec la commande ```sudo systemctl start chat_tp2``` puis on vérifie qu'il soit correctement lancé avec la commande ```sudo systemctl status chat_tp2```.
 
 <img src="Images/statuschat.png" alt="photo"/>
 
