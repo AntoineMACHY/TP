@@ -26,7 +26,7 @@ Enfin on vérifie le réseau (l'envoie et la réception de donnée) de notre VM 
 
 ## Partie 1 : Installation et configuration d'un service SSH
 
-1. On installe le pack avec la commande```sudo apt install openssh-server```
+1. On installe le pack "ssh" avec la commande```sudo apt install openssh-server```
 
 2. On lance le serveur avec la commande ```sudo systemctl start sshd``` 
 
@@ -62,7 +62,7 @@ Maitenant qu'on veut se connecter au nouveau port on doit faire : ```ssh -p 1060
 
 ## Partie 2 : FTP
 
-1. On installe le pack avec la commande```sudo apt install vsftpd```
+1. On installe le pack "vsftpd" avec la commande```sudo apt install vsftpd```
 
 2. On lance le serveur avec la commande ```sudo systemctl start vsftpd``` 
 
@@ -108,7 +108,7 @@ On peut donc réutiliser la même méthode dit prècedemment pour upload et down
 
 ## Parti 3 : Création de votre propre service
 
-1. On installe le pack avec la commande```sudo apt-get install netcat```.
+1. On installe le pack "netcat" avec la commande```sudo apt-get install netcat```.
 
 Les deux commandes pour faire un chat avec "netcat" sont : ```nc -l -p 2000``` et ```nc 192.168.56.142 2000```.
 
