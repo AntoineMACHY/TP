@@ -114,25 +114,25 @@ Les deux commandes pour faire un chat avec "netcat" sont : ```nc -l -p 2000``` e
 
 <img src="Images/nc.png" alt="photo"/>
 
-Suite à cela, on essaie de stocker notre discussion dans un fichier texte appellé "test.txt". A l'aide de la commande ```touch test.txt``` on crée le fichier. Puis pour lui faire stocker les données échangées on fait ```nc -l -p 2000 >> test.txt``` et ```nc 192.168.56.142 2000 >> test.txt```. Pour vérifier cela suite a un échange on va afficher les données stockées par le fichier texte ```cat test.txt```.
+Suite à cela, on essaie de stocker notre discussion dans un fichier texte appellé "test.txt". A l'aide de la commande ```touch test.txt``` on crée le fichier. Puis pour lui faire stocker les données échangées on fait ```nc -l -p 2000 >> test.txt``` et ```nc 192.168.56.142 2000 >> test.txt```. Pour vérifier cela suite à un échange on va afficher les données stockées par le fichier texte ```cat test.txt```.
 
 <img src="Images/test.png" alt="photo"/>
 
-2. On va creer un fichier appellé "chat_tp2.service" dans /etc/systemd/system avec les commandes ```cd /etc/systemd/system``` puis ```sudo touch chat_tp2.service```.
+2. On va créer un fichier appelé "chat_tp2.service" dans /etc/systemd/system avec les commandes ```cd /etc/systemd/system``` puis ```sudo touch chat_tp2.service```.
 
 <img src="Images/sudo touch service.png" alt="photo"/>
 
-Ensuite on lui donne les même permissions que les autres services c'est à dire le droits d'y écrire de le lire et de l'éxecuter avec la commande ```sudo chmod 777 chat_tp2.service```.
+Ensuite on lui donne les mêmes permissions que les autres services, c'est à dire le droit d'y écrire, de le lire et de l'exécuter avec la commande ```sudo chmod 777 chat_tp2.service```.
 
-Puis on y dépose le contenue suivant : 
+Puis on y dépose le contenu suivant : 
 
 <img src="Images/danservice.png" alt="photo"/>
 
-Ainsi on peut executer la commande ```sudo systemctl daemon-reload```
+Ainsi on peut exécuter la commande ```sudo systemctl daemon-reload```
 
-3. A présent nous devons tester les service que nous avous créée. 
+3. A présent nous devons tester le service que nous avons créé. 
 
-On le démarre avec la commande ```sudo systemctl start chat_tp2``` puis vérifie qu'il soit correctement lancé avec la commande ````sudo systemctl status chat_tp2```.
+On démarre le service avec la commande ```sudo systemctl start chat_tp2``` puis on vérifie qu'il soit correctement lancé avec la commande ````sudo systemctl status chat_tp2```.
 
 <img src="Images/statuschat.png" alt="photo"/>
 
@@ -140,6 +140,6 @@ On vérifie le port via la commande ```sudo ss -lanpt```
 
 <img src="Images/sschat.png" alt="photo"/>
 
-Ainsi on se connecte avec la commande ```nc 192.168.56.142 2000```depuis un terminal qu'on nomme "terminal B". Puis pour voir les données envoyer en temps réel par le "terminal B", on va voir nos log grace à la commande ```journalctl -xe -u chat_tp2 -f```
+Ainsi on se connecte avec la commande ```nc 192.168.56.142 2000```depuis un terminal qu'on nomme "terminal B". Puis pour voir les données envoyées en temps réel par le "terminal B", on va voir nos logs grâce à la commande ```journalctl -xe -u chat_tp2 -f```
 
 <img src="Images/lognc.png" alt="photo"/>
