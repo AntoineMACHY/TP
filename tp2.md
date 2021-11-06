@@ -110,13 +110,24 @@ On peut donc réutiliser la même méthode que dit précedement pour upload et d
 
 1. On installe le paquet avec la commande```sudo apt-get install netcat```
 
-2. Les deux commande pour faire un chat avec "netcat" sont : ```nc -l -p 2000``` et ```nc 192.168.56.142 2000```
+Les deux commande pour faire un chat avec "netcat" sont : ```nc -l -p 2000``` et ```nc 192.168.56.142 2000```
 
 <img src="Images/nc.png" alt="photo"/>
 
 Suite a cela on essaie de stocker notre discussion dans un fichier txt appellé "test.txt". A l'aide de la ```touch test.txt``` on crée le fichier. Puis en le pour le faire stocker les données échangées on fait ```nc -l -p 2000 >> test.txt``` et ```nc 192.168.56.142 2000 >> test.txt```. Pour vérifier cela suite a un échange on va afficher les données stockées par le fichier texte ```cat test.txt```.
 
 <img src="Images/test.png" alt="photo"/>
+
+2. On va creer un fichier appellé "chat_tp2.service" dans /etc/systemd/system avec les commandes ```cd /etc/systemd/system``` puis ```sudo touch chat_tp2.service```.
+
+<img src="Images/sudo touch service.png" alt="photo"/>
+
+Ensuite on lui donne les même permissions que les autres services c'est à dire le droits d'y écrire de le lire et de l'éxecuter avec la commande ```sudo chmod 777 chat_tp2.service```.
+
+Puis on y dépose le contenue suivant : 
+
+<img src="Images/danservice.png" alt="photo"/>
+
 
 
 
