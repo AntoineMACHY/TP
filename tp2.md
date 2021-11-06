@@ -141,3 +141,5 @@ On vérifie le port via la commande ```sudo ss -lanpt```
 <img src="Images/sschat.png" alt="photo"/>
 
 Ainsi on se connecte avec la commande ```nc 192.168.56.142 2000```depuis un terminal qu'on nomme "terminal B". Puis pour voir les données envoyer en temps réel par le "terminal B", on va voir nos log grace à la commande ```journalctl -xe -u chat_tp2 -f```
+
+<img src="Images/lognc.png" alt="photo"/>
