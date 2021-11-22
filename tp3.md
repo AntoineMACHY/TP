@@ -2,7 +2,7 @@
 
 ## I. Script carte d'identité
 
-Le fichier ```/srv/idcard/idcard.sh```
+**Fichier [`/srv/idcard/idcard.sh`](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp3/idcard.md)**
 
 ### Ce qui donne
 
