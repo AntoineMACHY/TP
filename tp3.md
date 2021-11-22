@@ -27,5 +27,5 @@ LISTEN 0      128             [::1]:631            [::]:*     users:(("cupsd",pi
                                  Dload  Upload   Total   Spent    Left  Speed
 100   115  100   115    0     0    333      0 --:--:-- --:--:-- --:--:--   333
 
-Here's your random cat : https://cdn2.thecatapi.com/images/ESj_RCNJ4.png*
+Here's your random cat : https://cdn2.thecatapi.com/images/ESj_RCNJ4.png
 ```
