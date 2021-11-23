@@ -16,12 +16,5 @@ echo "Video $1 was downloaded."
 echo "File path : $locate"
 
 else
-exit
+    exit
 fi
-
-if [ -d "/var/log/yt" ];then
-
-echo "[$date]" "Video $1 was downloaded. File path : $locate" >> "/var/log/yt/download.log"
-
-else
-exit
