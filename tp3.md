@@ -34,6 +34,10 @@ Here's your random cat : https://cdn2.thecatapi.com/images/ESj_RCNJ4.png
 
 **Fichier [`/srv/yt/yt.sh`](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp3/yt_sh.md)**
 
+**Log [`/srv/yt/yt.sh`](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp3/yt_sh.md)**
 
-
-
+```
+toto@toto-VirtualBox:/srv/yt$ bash yt.sh https://www.youtube.com/watch?v=jjs27jXL0Zs
+Video https://www.youtube.com/watch?v=jjs27jXL0Zs was downloaded.
+File path : /srv/yt/downloads/SI LA VIDÉO DURE 1 SECONDE LA VIDÉO S'ARRÊTE/SI LA VIDÉO DURE 1 SECONDE LA VIDÉO S'ARRÊTE.mp4
+```
