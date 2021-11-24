@@ -1,4 +1,4 @@
-# TP 3 : A little script
+# TP3-linux
 
 ## I. Script carte d'identité
 
@@ -34,7 +34,7 @@ Here's your random cat : https://cdn2.thecatapi.com/images/ESj_RCNJ4.png
 
 **Fichier [`/srv/yt/yt.sh`](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp3/yt_sh.md)**
 
-**Log [`/var/log/yt/download.log`](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp3/log.md)**
+**Fichier Log [`/var/log/yt/download.log`](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp3/log.md)**
 
 ```
 toto@toto-VirtualBox:/srv/yt$ bash yt.sh https://www.youtube.com/watch?v=jjs27jXL0Zs
