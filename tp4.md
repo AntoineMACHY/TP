@@ -12,7 +12,11 @@ cd /etc/sysconfig/network-scripts
 
 #changer l'interface  host-only
 sudo nano ifcfg-enp0s8
+```
 
+Les ajouts et changements à faire
+
+``` 
 TYPE=Ethernet
 PROXY_METHOD=none
 BROWSER_ONLY=no
