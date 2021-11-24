@@ -14,7 +14,7 @@ cd /etc/sysconfig/network-scripts
 sudo nano ifcfg-enp0s8
 ```
 
-Les ajouts et changements à faire
+**Les ajouts et changements à faire**
 
 ``` 
 TYPE=Ethernet
