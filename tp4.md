@@ -58,3 +58,10 @@ NETMASK=255.255.255.0
     inet6 fe80::a00:27ff:fe10:5091/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 ```
+**Connection SSH fonctionnelle**
+
+```
+C:\Users\fridi>ssh toto@192.168.56.150
+toto@192.168.56.150's password:
+Activate the web console with: systemctl enable --now cockpit.socket
+```
