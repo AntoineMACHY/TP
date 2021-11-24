@@ -61,11 +61,6 @@ NETMASK=255.255.255.0
 **Connection SSH fonctionnelle**
 
 ```
-C:\Users\fridi>ssh toto@192.168.56.150
-toto@192.168.56.150's password:
-Activate the web console with: systemctl enable --now cockpit.socket
-```
-```
 [toto@localhost network-scripts]$ sudo systemctl status sshd
 [sudo] Mot de passe de toto :
 ● sshd.service - OpenSSH server daemon
@@ -85,4 +80,9 @@ nov. 24 17:45:30 localhost.localdomain sshd[863]: Server listening on :: port 22
 nov. 24 17:45:30 localhost.localdomain systemd[1]: Started OpenSSH server daemon.
 nov. 24 18:01:55 localhost.localdomain sshd[1506]: Accepted password for toto from 192.168.56.141 port 53036 ssh2
 nov. 24 18:01:55 localhost.localdomain sshd[1506]: pam_unix(sshd:session): session opened for user toto by (uid=0)
+```
+```
+C:\Users\fridi>ssh toto@192.168.56.150
+toto@192.168.56.150's password:
+Activate the web console with: systemctl enable --now cockpit.socket
 ```
