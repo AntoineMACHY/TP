@@ -14,7 +14,7 @@ cd /etc/sysconfig/network-scripts
 sudo nano ifcfg-enp0s8
 ```
 
-**Les ajouts et changements à faire**
+**Les ajouts et changements à faire du fichier**
 
 ``` 
 TYPE=Ethernet
@@ -64,4 +64,25 @@ NETMASK=255.255.255.0
 C:\Users\fridi>ssh toto@192.168.56.150
 toto@192.168.56.150's password:
 Activate the web console with: systemctl enable --now cockpit.socket
+```
+```
+[toto@localhost network-scripts]$ sudo systemctl status sshd
+[sudo] Mot de passe de toto :
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2021-11-24 17:45:30 CET; 1h 4min ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+ Main PID: 863 (sshd)
+    Tasks: 1 (limit: 4944)
+   Memory: 4.7M
+   CGroup: /system.slice/sshd.service
+           └─863 /usr/sbin/sshd -D -oCiphers=aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes128-ctr,aes128-cbc -oMACs=hmac-sha2-256-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-128>
+
+nov. 24 17:45:30 localhost.localdomain systemd[1]: Starting OpenSSH server daemon...
+nov. 24 17:45:30 localhost.localdomain sshd[863]: Server listening on 0.0.0.0 port 22.
+nov. 24 17:45:30 localhost.localdomain sshd[863]: Server listening on :: port 22.
+nov. 24 17:45:30 localhost.localdomain systemd[1]: Started OpenSSH server daemon.
+nov. 24 18:01:55 localhost.localdomain sshd[1506]: Accepted password for toto from 192.168.56.141 port 53036 ssh2
+nov. 24 18:01:55 localhost.localdomain sshd[1506]: pam_unix(sshd:session): session opened for user toto by (uid=0)
 ```
