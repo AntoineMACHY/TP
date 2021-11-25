@@ -226,7 +226,7 @@ total 20
 -rw-r--r--. 1 root root  368 10 juin  11:09 nginx-logo.png
 -rw-r--r--. 1 root root 1800 10 juin  11:09 poweredby.png
 ```
-**Autorisation des connexions au service du port 80 (NGINX)y**
+**Autorisation des connexions au service du port 80 (NGINX)**
 ```
 [root@node1 html]# sudo firewall-cmd --add-port=80/tcp --permanent
 success
