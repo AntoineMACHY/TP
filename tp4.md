@@ -283,3 +283,79 @@ success
 ```
 **[Page Nginx avec nouveau port](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/new-port)**
 
+**créationdu nouvelle utilisateur**
+```
+[root@node1 nginx]# useradd coco -m -s /home/web
+[root@node1 etc]# sudo nano nginx.conf
+```
+**homedir de l'utilisateur coco**
+```
+coco:x:1001:1001::/home/coco:/home/web
+```
+**Mot de passe de l'utilisateur "coco"**
+```
+root:$6$U0YeoeorhqMUpMfD$wy4bhF9LxyBqHmf3RWgyQBj66FtReb9y5Dd6qXMn1OmuD0UDpC1qt6nCHhVylit0quaApcqtbCUX6W2UGPrRP1::0:99999:7:::
+bin:*:18700:0:99999:7:::
+daemon:*:18700:0:99999:7:::
+adm:*:18700:0:99999:7:::
+lp:*:18700:0:99999:7:::
+sync:*:18700:0:99999:7:::
+shutdown:*:18700:0:99999:7:::
+halt:*:18700:0:99999:7:::
+mail:*:18700:0:99999:7:::
+operator:*:18700:0:99999:7:::
+games:*:18700:0:99999:7:::
+ftp:*:18700:0:99999:7:::
+nobody:*:18700:0:99999:7:::
+dbus:!!:18955::::::
+systemd-coredump:!!:18955::::::
+systemd-resolve:!!:18955::::::
+tss:!!:18955::::::
+polkitd:!!:18955::::::
+libstoragemgmt:!!:18955::::::
+cockpit-ws:!!:18955::::::
+cockpit-wsinstance:!!:18955::::::
+sssd:!!:18955::::::
+chrony:!!:18955::::::
+sshd:!!:18955::::::
+toto:$6$47cGh5zp5iLxmlny$cu4isDTDM9FCLDcuIMlNdGlfGLeLBR4ZuEuJQ9kX4YoPgoxATFgznN45wsWtDlhDqASmEdoM7/rNskXHsUFNW1::0:99999:7:::
+nginx:!!:18956::::::
+coco$toto
+```
+**Modification du fichier configuration**
+```
+# For more information on configuration, see:
+#   * Official English Documentation: http://nginx.org/en/docs/
+#   * Official Russian Documentation: http://nginx.org/ru/docs/
+
+user coco;
+worker_processes auto;
+error_log /var/log/nginx/error.log;
+pid /run/nginx.pid;
+```
+**Vérification de l'effet de la modification**
+```
+[root@node1 nginx]# ps -ef |grep nginx
+root        6238       1  0 05:09 ?        00:00:00 nginx: master process /usr/sbin/nginx
+coco        6239    6238  0 05:09 ?        00:00:00 nginx: worker process
+root        6243    2990  0 05:10 pts/0    00:00:00 grep --color=auto nginx
+```
+**Mon index.html**
+```
+#!/etc/web
+<h1>toto<h1>
+```
+**Je modifie la racine web**
+```
+server {
+        listen       8080 default_server;
+        listen       [::]:8080 default_server;
+        server_name  _;
+        root         /var/www/super_site_web;
+```
+**On a notre page qui s'affiche**
+```
+[root@node1 nginx]# curl 192.168.56.150:8080
+#!/etc/web
+<h1>toto<h1>
+```
