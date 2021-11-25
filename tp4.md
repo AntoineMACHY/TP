@@ -234,4 +234,4 @@ success
 [root@node1 html]# sudo firewall-cmd --reload
 success
 ```
-**Fichier [Page Nginx](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/page-nginx)**
+**[Page Nginx](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/page-nginx)**
