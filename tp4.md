@@ -32,9 +32,9 @@ DEVICE=enp0s8
 ONBOOT=yes
 IPADDR=192.168.56.150
 NETMASK=255.255.255.0
-``
+```
 **Le resultat de la commande "ip a"**
-``
+```
 [toto@localhost network-scripts]$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -202,13 +202,13 @@ nov. 25 04:04:51 node1.tp4.linux nginx[6037]: nginx: configuration file /etc/ngi
 nov. 25 04:04:51 node1.tp4.linux systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
 nov. 25 04:04:51 node1.tp4.linux systemd[1]: Started The nginx HTTP and reverse proxy server.
 ```
-**L'utilasateur est Nginx**
+**L'utilisateur est Nginx**
 ```
 utilisateur tourne le processus du service NGINX
 root        6040  0.0  0.2 119160  2180 ?        Ss   04:04   0:00 nginx: master process /usr/sbin/nginx
 nginx       6041  0.0  0.9 151820  7944 ?        S    04:04   0:00 nginx: worker process
 ```
-**Le port 80**
+**Le port par defaut est 80**
 ```
 LISTEN                0                     128                                            [::]:80                                           [::]:*                    users:(("nginx",pid=6041,fd=9),("nginx",pid=6040,fd=9))
 ```
@@ -226,14 +226,14 @@ total 20
 -rw-r--r--. 1 root root  368 10 juin  11:09 nginx-logo.png
 -rw-r--r--. 1 root root 1800 10 juin  11:09 poweredby.png
 ```
-**Autorisation des connexions au service du port 80 (NGINX)**
+**Autorisation des connexions au service du port 80 (NGINX)y**
 ```
 [root@node1 html]# sudo firewall-cmd --add-port=80/tcp --permanent
 success
 [root@node1 html]# sudo firewall-cmd --reload
 success
 ```
-**[Page Nginx](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/page-nginx)**
+**[Page Nginx](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/page-nginx.md)**
 
 **Changement du port**
 ```
@@ -280,7 +280,7 @@ success
 [root@node1 nginx]# sudo firewall-cmd --reload
 success
 ```
-**[Page Nginx avec nouveau port](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/new-port)**
+**[Page Nginx avec nouveau port](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/new-port.md)**
 
 **créationdu nouvelle utilisateur**
 ```
