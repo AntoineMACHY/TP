@@ -235,3 +235,51 @@ success
 success
 ```
 **[Page Nginx](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/page-nginx)**
+
+**Changement du port**
+```
+server {
+        listen       8080 default_server;
+        listen       [::]:8080 default_server;
+```
+**Vérifion s'il marche toujours**
+```
+[root@node1 nginx]# sudo systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2021-11-25 04:46:12 CET; 18s ago
+  Process: 6151 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 6148 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 6146 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 6153 (nginx)
+    Tasks: 2 (limit: 4944)
+   Memory: 3.7M
+   CGroup: /system.slice/nginx.service
+           ├─6153 nginx: master process /usr/sbin/nginx
+           └─6154 nginx: worker process
+
+nov. 25 04:46:12 node1.tp4.linux systemd[1]: nginx.service: Succeeded.
+nov. 25 04:46:12 node1.tp4.linux systemd[1]: Stopped The nginx HTTP and reverse proxy server.
+nov. 25 04:46:12 node1.tp4.linux systemd[1]: Starting The nginx HTTP and reverse proxy server...
+nov. 25 04:46:12 node1.tp4.linux nginx[6148]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nov. 25 04:46:12 node1.tp4.linux nginx[6148]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+nov. 25 04:46:12 node1.tp4.linux systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+nov. 25 04:46:12 node1.tp4.linux systemd[1]: Started The nginx HTTP and reverse proxy server.
+```
+**Le changement a bien pris effet**
+```
+[root@node1 nginx]# ss -lanpt | grep nginx
+LISTEN 0      128           0.0.0.0:8080        0.0.0.0:*     users:(("nginx",pid=6154,fd=8),("nginx",pid=6153,fd=8))
+LISTEN 0      128              [::]:8080           [::]:*     users:(("nginx",pid=6154,fd=9),("nginx",pid=6153,fd=9))
+```
+**On ferme l'ancien port et on ouvre le nouveau**
+```
+[root@node1 nginx]# sudo firewall-cmd --remove-port=80/tcp --permanent
+success
+[root@node1 nginx]# sudo firewall-cmd --add-port=8080/tcp --permanent
+success
+[root@node1 nginx]# sudo firewall-cmd --reload
+success
+```
+**[Page Nginx avec nouveau port](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/page-nginx)**
+
