@@ -137,3 +137,101 @@ Activate the web console with: systemctl enable --now cockpit.socket
 Last login: Thu Nov 25 03:28:42 2021 from 192.168.56.144
 [root@localhost ~]#
 ```
+**Vérification accés internet**
+```
+[root@localhost .ssh]# ping 1.1.1.1
+PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
+64 bytes from 1.1.1.1: icmp_seq=1 ttl=56 time=16.1 ms
+64 bytes from 1.1.1.1: icmp_seq=2 ttl=56 time=16.5 ms
+64 bytes from 1.1.1.1: icmp_seq=3 ttl=56 time=18.1 ms
+64 bytes from 1.1.1.1: icmp_seq=4 ttl=56 time=14.8 ms
+64 bytes from 1.1.1.1: icmp_seq=5 ttl=56 time=15.9 ms
+^C
+--- 1.1.1.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 14.800/16.277/18.114/1.084 ms
+[root@localhost .ssh]#
+```
+**Vérification via un domaine**
+```
+[root@localhost .ssh]# ping youtube
+PING nc-ass-vip.sdv.fr (212.95.74.75) 56(84) bytes of data.
+^C
+--- nc-ass-vip.sdv.fr ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3082ms
+```
+**Nommage de la machine**
+```
+[root@localhost ~]# sudo nano /etc/hostname
+[root@localhost ~]# hostname
+node1.tp4.linux
+```
+**installation de nginx**
+```
+[root@node1 ~]# sudo yum install nginx
+Last metadata expiration check: 2:47:47 ago on jeu. 25 nov. 2021 01:05:42 CET.
+Dependencies resolved.
+=============================================================================================================================================================================================================================================
+ Package                                                         Architecture                               Version                                                                      Repository                                     Size
+=============================================================================================================================================================================================================================================
+Installing:
+ nginx
+ ...
+ complete!
+ 
+```
+**Analyse**
+```
+[root@node1 ~]# sudo systemctl start nginx
+[root@node1 ~]# sudo systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2021-11-25 04:04:51 CET; 6s ago
+  Process: 6038 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+  Process: 6037 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+  Process: 6035 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+ Main PID: 6040 (nginx)
+    Tasks: 2 (limit: 4944)
+   Memory: 4.3M
+   CGroup: /system.slice/nginx.service
+           ├─6040 nginx: master process /usr/sbin/nginx
+           └─6041 nginx: worker process
+
+nov. 25 04:04:51 node1.tp4.linux systemd[1]: Starting The nginx HTTP and reverse proxy server...
+nov. 25 04:04:51 node1.tp4.linux nginx[6037]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nov. 25 04:04:51 node1.tp4.linux nginx[6037]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+nov. 25 04:04:51 node1.tp4.linux systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+nov. 25 04:04:51 node1.tp4.linux systemd[1]: Started The nginx HTTP and reverse proxy server.
+```
+**L'utilasateur est Nginx**
+```
+utilisateur tourne le processus du service NGINX
+root        6040  0.0  0.2 119160  2180 ?        Ss   04:04   0:00 nginx: master process /usr/sbin/nginx
+nginx       6041  0.0  0.9 151820  7944 ?        S    04:04   0:00 nginx: worker process
+```
+**Le port 80**
+```
+LISTEN                0                     128                                            [::]:80                                           [::]:*                    users:(("nginx",pid=6041,fd=9),("nginx",pid=6040,fd=9))
+```
+**La dossier racine web**
+```
+/usr/share/nginx/html
+```
+**Les fichiers peuveut être lu par l'utilisateur**
+```
+[root@node1 html]# ls -l
+total 20
+-rw-r--r--. 1 root root 3332 10 juin  11:09 404.html
+-rw-r--r--. 1 root root 3404 10 juin  11:09 50x.html
+-rw-r--r--. 1 root root 3429 10 juin  11:09 index.html
+-rw-r--r--. 1 root root  368 10 juin  11:09 nginx-logo.png
+-rw-r--r--. 1 root root 1800 10 juin  11:09 poweredby.png
+```
+**Autorisation des connexions au service du port 80 (NGINX)**
+```
+[root@node1 html]# sudo firewall-cmd --add-port=80/tcp --permanent
+success
+[root@node1 html]# sudo firewall-cmd --reload
+success
+```
+**Fichier [Page Nginx](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp3/idcard.md)**
