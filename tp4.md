@@ -32,8 +32,9 @@ DEVICE=enp0s8
 ONBOOT=yes
 IPADDR=192.168.56.150
 NETMASK=255.255.255.0
-
-#Le resultat de la commande "ip a"
+``
+**Le resultat de la commande "ip a"**
+``
 [toto@localhost network-scripts]$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
