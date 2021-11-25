@@ -1,10 +1,6 @@
 # TP4-linux 
 
-# Sommaire
-
-- [1 : Configuration IP statique](#1-:-Configuration-IP-statique)
-
-# 1 : Configuration IP statique
+## Configuration IP statique
 
 ```
 # chemin pour configurer l'interface host-only
@@ -166,6 +162,8 @@ PING nc-ass-vip.sdv.fr (212.95.74.75) 56(84) bytes of data.
 [root@localhost ~]# hostname
 node1.tp4.linux
 ```
+## Mettre en place un service
+
 **installation de nginx**
 ```
 [root@node1 ~]# sudo yum install nginx
@@ -213,7 +211,7 @@ nginx       6041  0.0  0.9 151820  7944 ?        S    04:04   0:00 nginx: worker
 ```
 LISTEN                0                     128                                            [::]:80                                           [::]:*                    users:(("nginx",pid=6041,fd=9),("nginx",pid=6040,fd=9))
 ```
-**La dossier racine web**
+**La racine web**
 ```
 /usr/share/nginx/html
 ```
