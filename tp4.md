@@ -281,5 +281,5 @@ success
 [root@node1 nginx]# sudo firewall-cmd --reload
 success
 ```
-**[Page Nginx avec nouveau port](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/page-nginx)**
+**[Page Nginx avec nouveau port](https://github.com/AntoineMACHY/TP/blob/main/fichier_tp4/new-port)**
 
