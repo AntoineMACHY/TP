@@ -151,11 +151,18 @@ rtt min/avg/max/mdev = 14.800/16.277/18.114/1.084 ms
 ```
 **Vérification via un domaine**
 ```
-[root@localhost .ssh]# ping youtube
-PING nc-ass-vip.sdv.fr (212.95.74.75) 56(84) bytes of data.
-^C
---- nc-ass-vip.sdv.fr ping statistics ---
-4 packets transmitted, 0 received, 100% packet loss, time 3082ms
+C:\Users\fridi>ping youtube.com
+
+Envoi d’une requête 'ping' sur youtube.com [142.250.178.142] avec 32 octets de données :
+Réponse de 142.250.178.142 : octets=32 temps=16 ms TTL=115
+Réponse de 142.250.178.142 : octets=32 temps=17 ms TTL=115
+Réponse de 142.250.178.142 : octets=32 temps=17 ms TTL=115
+Réponse de 142.250.178.142 : octets=32 temps=21 ms TTL=115
+
+Statistiques Ping pour 142.250.178.142:
+    Paquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0%),
+Durée approximative des boucles en millisecondes :
+    Minimum = 16ms, Maximum = 21ms, Moyenne = 17ms
 ```
 **Nommage de la machine**
 ```
