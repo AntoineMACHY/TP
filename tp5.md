@@ -1,6 +1,6 @@
 # TP5-linux
 
-##
+## Setup DB
 
 **Installer mariadb**
 ```
@@ -203,3 +203,37 @@ sudo dnf install zip unzip libxml2 openssl php74-php php74-php-ctype php74-php-c
 IncludeOptional conf.d/*.conf
 ```
 **[fichier Next-cloud](https://github.com/AntoineMACHY/TP/blob/main/fichier-td5/Netx-cloud.md)**
+
+**changement de propriétaire**
+```
+[toto@localhost html]$ sudo chown apache /var/www/nextcloud/html/
+```
+**configurer PHP**
+```
+[toto@localhost php74]$ cat /etc/opt/remi/php74/php.ini | grep Europe
+;date.timezone = "Europe/Paris"
+```
+**Installer NextCloud**
+```
+[toto@localhost ~]$ curl -SLO -k https://download.nextcloud.com/server/releases/nextcloud-21.0.1.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  148M  100  148M    0     0  21.5M      0  0:00:06  0:00:06 --:--:-- 23.3M
+[toto@localhost ~]$ ls
+nextcloud-21.0.1.zip
+```
+**Ranger la chambre**
+```
+[toto@localhost ~]$ unzip nextcloud-21.0.1.zip
+[toto@localhost ~]$ sudo mv nextcloud /var/www/nextcloud/html
+[toto@localhost ~]$ sudo chown -R apache:apache /var/www/nextcloud
+[toto@localhost ~]$ sudo systemctl restart httpd
+[toto@localhost ~]$ rm -rf nextcloud
+```
+**Test**
+```
+[toto@localhost etc]$ cat hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.5.1.11 web.tp5.linux
+```
