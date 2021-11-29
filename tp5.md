@@ -202,3 +202,4 @@ sudo dnf install zip unzip libxml2 openssl php74-php php74-php-ctype php74-php-c
 # Load config files in the "/etc/httpd/conf.d" directory, if any.
 IncludeOptional conf.d/*.conf
 ```
+**[fichier Next-cloud](https://github.com/AntoineMACHY/TP/blob/main/fichier-td5/Netx-cloud.md)**
