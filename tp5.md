@@ -136,7 +136,54 @@ Interdire la connexion a root a distance permet de sécurisé root a une éventu
 Il faut supprimer la base de donnée test car tous le monde y a accés.
 Recharger les privileges rendra les changement opérer immédiat.
 
+**test**
 
+## WEB
 
-
-
+**installer httpd**
+```
+[toto@localhost ~]$ sudo dnf install httpd
+```
+**lancement de httpd**
+```
+[toto@localhost ~]$ systemctl start httpd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentification requise pour démarrer « httpd.service ».
+Authenticating as: toto
+Password:
+==== AUTHENTICATION COMPLETE ====
+[toto@localhost ~]$ systemctl enable httpd
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-unit-files ====
+Authentication is required to manage system service or unit files.
+Authenticating as: toto
+Password:
+==== AUTHENTICATION COMPLETE ====
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
+==== AUTHENTICATING FOR org.freedesktop.systemd1.reload-daemon ====
+Authentication is required to reload the systemd state.
+Authenticating as: toto
+Password:
+```
+**processus lié à httpd**
+```
+[toto@localhost ~]$ ps -ef | grep httpd
+root        6194       1  0 20:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache      6195    6194  0 20:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache      6196    6194  0 20:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache      6197    6194  0 20:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache      6198    6194  0 20:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+toto        6471    6138  0 20:34 pts/1    00:00:00 grep --color=auto httpd
+```
+**Le port d'écoute**
+```
+[toto@localhost ~]$ sudo ss -lanpt | grep httpd
+LISTEN 0      128                *:80              *:*     users:(("httpd",pid=6198,fd=4),("httpd",pid=6197,fd=4),("httpd",pid=6196,fd=4),("httpd",pid=6194,fd=4))
+```
+```L'utilisateur de httpd est apache```
+**ouverture du port 80**
+```
+[toto@localhost ~]$ sudo firewall-cmd --add-port=80/tcp --permanent
+success
+[toto@localhost ~]$ sudo firewall-cmd --reload
+success
+```
