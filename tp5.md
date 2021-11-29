@@ -187,3 +187,4 @@ success
 [toto@localhost ~]$ sudo firewall-cmd --reload
 success
 ```
+**[curl](https://github.com/AntoineMACHY/TP/blob/main/fichier-td5/page-web.md)**
