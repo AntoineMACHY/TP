@@ -188,3 +188,17 @@ success
 success
 ```
 **[curl](https://github.com/AntoineMACHY/TP/blob/main/fichier-td5/page-web.md)**
+
+**Telecharger PHP**
+```
+sudo dnf install epel-release
+sudo dnf update
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+dnf module enable php:remi-7.4
+sudo dnf install zip unzip libxml2 openssl php74-php php74-php-ctype php74-php-curl php74-php-gd php74-php-iconv php74-php-json php74-php-libxml php74-php-mbstring php74-php-openssl php74-php-posix php74-php-session php74-php-xml php74-php-zip php74-php-zlib php74-php-pdo php74-php-mysqlnd php74-php-intl php74-php-bcmath php74-php-gmp
+```
+**Analyser de la conf**
+```
+# Load config files in the "/etc/httpd/conf.d" directory, if any.
+IncludeOptional conf.d/*.conf
+```
